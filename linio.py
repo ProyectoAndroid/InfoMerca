@@ -29,3 +29,16 @@ for categoria in range(categorias.__len__()):
 
                 for nombre_resultado in resultado.find_all("a"):
                     print nombre_resultado['title']
+
+                for imagen in resultado.find_all("img"):
+                    if imagen["src"].find("https://") != -1:
+                        print imagen["src"]
+
+                for precioOld in resultado.find_all("span"):
+                    if precioOld["class"] == ["product-itm-price-old"]:
+                        print precioOld.string
+
+                for precioNew in resultado.find_all("span"):
+                    if precioNew["class"] == ["product-itm-price-new"]:
+                        print precioNew.string
+
