@@ -41,4 +41,8 @@ for categoria in range(categorias.__len__()):
                 for precioNew in resultado.find_all("span"):
                     if precioNew["class"] == ["product-itm-price-new"]:
                         print precioNew.string
+                        
+                for marca in resultado.find_all("li"):
+                    if marca["class"] == ["product-item-brand"]:
+                        print marca.string.lstrip()
 

@@ -12,13 +12,9 @@ for paquete in soup.find_all("ul", id="catalog-items"):
 
     resultado = BeautifulSoup(str(paquete))
 
-    for envioGratis in resultado.find_all("span"):
-        if envioGratis["class"] == ["product-itm-free-shipping"]:
-            freeShiping = True
-            print freeShiping
-        else:
-            freeShiping = False
-            print freeShiping
+    for marca in resultado.find_all("li"):
+            if marca["class"] == ["product-item-brand"]:
+                print marca.string.lstrip()
 
 
 
